@@ -1,0 +1,14 @@
+<mat-toolbar> ALL Books </mat-toolbar>
+<mat-grid-list cols="3">
+  <mat-grid-tile *ngFor="let book of books|async">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h4>{{book.title}}</h4></mat-card-title>
+        <mat-card-title><h4>{{book.price}}</h4></mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
+
+      <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/books']">Details Book</button>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

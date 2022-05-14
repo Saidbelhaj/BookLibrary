@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" >Books Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav">
+        <li class="nav-item"*ngIf="isUser" >
+          <a class="nav-link" [routerLink]="['/dashboard']">My Profile</a>
+        </li>
+        <li class="nav-item"*ngIf="isUser" >
+          <a class="nav-link" [routerLink]="['/books']">Books Details</a>
+        </li>
+        <li class="nav-item"*ngIf="isUser" >
+          <a class="nav-link"  [routerLink]="['/bookview']">Book View</a>
+        </li>
+        <li class="nav-item"*ngIf="isUser" >
+          <a class="nav-link"  [routerLink]="['/add-book']">Add Book</a>
+        </li>
+        <li class="nav-item" *ngIf="isUser" >
+          <a class="btn btn-block btn-danger" (click)="ngAuthService.SignOut()">Logout</a>
+        </li>
+      </ul>
+    </div>
+
+    </div>
+</nav>
+
